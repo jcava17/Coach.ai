@@ -5,6 +5,8 @@ import { createClient } from "@supabase/supabase-js";
 import { Trophy, Plus, LogOut, ShieldCheck, LineChart } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -136,12 +138,39 @@ export default function CoachAI() {
     setPlays([]); setGames([]); setActiveGameId(null); setRecentCalls([]);
   };
 
+  const deletePlay = async (id: string) => {
+  if (!confirm("Delete this play? All recorded calls for it will be removed.")) return;
+  const { error } = await supabase.from("plays").delete().eq("id", id);
+  if (error) return toast.error(error.message);
+  toast.success("Play deleted");
+  await Promise.all([refreshPlays(), refreshRecent()]);
+};
+
+const undoCall = async (callId: string) => {
+  if (!confirm("Undo this call? It will be deleted.")) return;
+  const { error } = await supabase.from("play_calls").delete().eq("id", callId);
+  if (error) return toast.error(error.message);
+  toast.success("Call undone");
+  await refreshRecent();
+};
+
+const fixCallPlay = async (callId: string, newPlayId: string) => {
+  const { error } = await supabase.from("play_calls").update({ play_id: newPlayId }).eq("id", callId);
+  if (error) return toast.error(error.message);
+  toast.success("Call updated");
+  await refreshRecent();
+};
+
+
+
   const addPlay = async () => {
     if (!newPlayName.trim()) return toast.error("Play name required");
     const { error } = await supabase.from("plays").insert({ name: newPlayName.trim(), icon: newPlayIcon });
     if (error) toast.error(error.message);
     else { setNewPlayName(""); toast.success("Play added"); refreshPlays(); }
   };
+
+  
 
   const addGame = async () => {
     if (!newOpponent.trim()) return toast.error("Opponent required");
@@ -152,13 +181,34 @@ export default function CoachAI() {
   };
 
   const recordPlayCall = async () => {
-    if (!yardageDialog.play || !activeGameId) return;
-    const yards = parseInt(yardageDialog.yards, 10);
-    if (Number.isNaN(yards) || yards < -99 || yards > 99) return toast.error("Yards must be between -99 and 99");
-    const { error } = await supabase.from("play_calls").insert({ play_id: yardageDialog.play.id, game_id: activeGameId, yards });
-    if (error) toast.error(error.message);
-    else { toast.success("Play saved"); setYardageDialog({ open: false, play: null, yards: "0" }); refreshRecent(); }
-  };
+  if (!yardageDialog.play) return toast.error("No play selected.");
+  if (!activeGameId) return toast.error("Pick or create a game first.");
+  
+  // require an integer between -99 and 99
+  const raw = (yardageDialog.yards ?? "").trim();
+  const intLike = /^-?\d+$/.test(raw);
+  if (!intLike) return toast.error("Enter a whole number (no decimals).");
+  const yards = Number(raw);
+  if (!Number.isFinite(yards) || yards < -99 || yards > 99) {
+    return toast.error("Yards must be between -99 and 99");
+  }
+
+  const { error } = await supabase
+    .from("play_calls")
+    .insert({ play_id: yardageDialog.play.id, game_id: activeGameId, yards })
+    .select("id")
+    .single();
+
+  if (error) {
+    console.error("play_calls insert error:", error);
+    return toast.error(`Save failed: ${error.message}`);
+  }
+
+  toast.success("Play saved");
+  setYardageDialog({ open: false, play: null, yards: "0" });
+  await refreshRecent();
+};
+
 
   const perPlayStats = useMemo(() => {
     const m = new Map<string, {count:number,sum:number,icon:string}>();
@@ -309,10 +359,27 @@ export default function CoachAI() {
             <Label>Yards gained (−99 to 99)</Label>
             <Input type="number" inputMode="numeric" value={yardageDialog.yards} onChange={e => setYardageDialog(d => ({ ...d, yards: e.target.value }))} />
           </div>
-          <DialogFooter className="gap-2">
-            <Button variant="outline" onClick={() => setYardageDialog({ open: false, play: null, yards: "0" })}>Cancel</Button>
-            <Button onClick={recordPlayCall}>Save</Button>
-          </DialogFooter>
+          <div className="flex items-center justify-between gap-2">
+  {/* Left side: destructive delete play */}
+  <Button
+    variant="destructive"
+    onClick={() => yardageDialog.play && deletePlay(yardageDialog.play.id)}
+  >
+    Delete play
+  </Button>
+
+  {/* Right side: cancel / save */}
+  <div className="flex items-center gap-2">
+    <Button
+      variant="outline"
+      onClick={() => setYardageDialog({ open: false, play: null, yards: "0" })}
+    >
+      Cancel
+    </Button>
+    <Button onClick={recordPlayCall}>Save</Button>
+  </div>
+</div>
+
         </DialogContent>
       </Dialog>
 
