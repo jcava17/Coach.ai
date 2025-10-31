@@ -1,29 +1,11 @@
 Branches in this repo (with details):
 
-- hero-path
-  SHA: a145bb7c33f1273737a9962bce6e9816c545471d
-  Commits: 6
-  Recent commits:
-    a145bb7 | Author: Jason Cava <180894223+jcava17@users.noreply.github.com> | Committer: Jason Cava <180894223+jcava17@users.noreply.github.com> | Date: 2025-09-16T09:24:47-04:00 | left path: add defeating the dragon and being the hero of the village.
-    ba7c7f2 | Author: Jason Cava <180894223+jcava17@users.noreply.github.com> | Committer: Jason Cava <180894223+jcava17@users.noreply.github.com> | Date: 2025-09-16T09:23:01-04:00 | left path: add defeating the dragon and being the hero of the village.
-    e149852 | Author: Jason Cava <180894223+jcava17@users.noreply.github.com> | Committer: Jason Cava <180894223+jcava17@users.noreply.github.com> | Date: 2025-09-16T09:21:04-04:00 | left path: add pulling the sword and defeating the dragon.
-    45c4fa8 | Author: Jason Cava <180894223+jcava17@users.noreply.github.com> | Committer: Jason Cava <180894223+jcava17@users.noreply.github.com> | Date: 2025-09-16T09:17:02-04:00 | Added a center path.
-    8d5ad4a | Author: GitHub Actions <actions@github.com> | Committer: GitHub Actions <actions@github.com> | Date: 2025-09-16T12:34:44Z | Auto-update branch-info.txt
 - main
-  SHA: c74ac18f8c6e92d02d3e7ad5a7fa2ae8d7974804
-  Commits: 9
+  SHA: 71e325a1cf4d1ac6e4590bfe15f835e5f974ea12
+  Commits: 12
   Recent commits:
+    71e325a | Author: Jason Cava <180894223+jcava17@users.noreply.github.com> | Committer: Jason Cava <180894223+jcava17@users.noreply.github.com> | Date: 2025-10-30T20:12:52-04:00 | Working Coach.AI version
+    7cb6489 | Author: Jason Cava <180894223+jcava17@users.noreply.github.com> | Committer: Jason Cava <180894223+jcava17@users.noreply.github.com> | Date: 2025-10-29T16:14:52-04:00 | Initial Coach.AI build
+    db8a4fd | Author: GitHub Actions <actions@github.com> | Committer: GitHub Actions <actions@github.com> | Date: 2025-09-16T14:33:51Z | Auto-update branch-info.txt
     c74ac18 | Author: Jason Cava <180894223+jcava17@users.noreply.github.com> | Committer: Jason Cava <180894223+jcava17@users.noreply.github.com> | Date: 2025-09-16T10:27:46-04:00 | Merge branch 'villain-path'
     eeadd3b | Author: GitHub Actions <actions@github.com> | Committer: GitHub Actions <actions@github.com> | Date: 2025-09-16T14:21:11Z | Auto-update branch-info.txt
-    f8a3fa5 | Author: student <jcava@emich.edu> | Committer: student <jcava@emich.edu> | Date: 2025-09-16T07:01:15-07:00 | villain: update README with branch summary
-    19af6ae | Author: student <jcava@emich.edu> | Committer: student <jcava@emich.edu> | Date: 2025-09-16T06:56:25-07:00 | villain: add evil twist to right path
-    64cba19 | Author: GitHub Actions <actions@github.com> | Committer: GitHub Actions <actions@github.com> | Date: 2025-09-16T13:33:43Z | Auto-update branch-info.txt
-- villain-path
-  SHA: f8a3fa5accb751b13c28a074ebb5f2ee6263b568
-  Commits: 7
-  Recent commits:
-    f8a3fa5 | Author: student <jcava@emich.edu> | Committer: student <jcava@emich.edu> | Date: 2025-09-16T07:01:15-07:00 | villain: update README with branch summary
-    19af6ae | Author: student <jcava@emich.edu> | Committer: student <jcava@emich.edu> | Date: 2025-09-16T06:56:25-07:00 | villain: add evil twist to right path
-    64cba19 | Author: GitHub Actions <actions@github.com> | Committer: GitHub Actions <actions@github.com> | Date: 2025-09-16T13:33:43Z | Auto-update branch-info.txt
-    04e3439 | Author: GitHub Actions <actions@github.com> | Committer: GitHub Actions <actions@github.com> | Date: 2025-09-16T13:25:41Z | Auto-update branch-info.txt
-    45c4fa8 | Author: Jason Cava <180894223+jcava17@users.noreply.github.com> | Committer: Jason Cava <180894223+jcava17@users.noreply.github.com> | Date: 2025-09-16T09:17:02-04:00 | Added a center path.
