@@ -1,26 +1,36 @@
-# Lab 4: Git Basics and Branching
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Overview
+## Getting Started
 
-This repo contains a simple "choose your own adventure" style Python story. You will create and explore multiple branches to simulate different versions of this story.
+First, run the development server:
 
-## Your Task
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-You will:
-1. Create two new branches: `hero-path` and `villain-path`
-2. Make different story twists in each branch
-3. Commit and push all changes to GitHub
-4. Write a short summary of each branch here
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Branch Summaries
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-- `main`: Original story starter
-- `hero-path`: _[pulls the sword, defeats the dragon and becomes a hero for the village]]_
-- `villain-path`: _[the squirrel recommends taking a potion for endless power and wealth]]_
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Final Checklist
+## Learn More
 
-- [ ] At least 3 branches (`main`, `hero-path`, `villain-path`)
-- [ ] Each branch has its own unique story version
-- [ ] At least 2 commits per branch
-- [ ] Changes are pushed to GitHub from EC2 or local
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
