@@ -1,11 +1,11 @@
 Branches in this repo (with details):
 
 - main
-  SHA: e8b9fb047dc220b90721272559da9550e939c3c5
-  Commits: 20
+  SHA: d867348ea9918e91524ae26fb93528f68b22ee78
+  Commits: 22
   Recent commits:
+    d867348 | Author: Jason Cava <180894223+jcava17@users.noreply.github.com> | Committer: Jason Cava <180894223+jcava17@users.noreply.github.com> | Date: 2025-11-03T11:53:24-05:00 | guard supabase and remove red
+    7cc3cce | Author: GitHub Actions <actions@github.com> | Committer: GitHub Actions <actions@github.com> | Date: 2025-11-03T16:36:54Z | Auto-update branch-info.txt
     e8b9fb0 | Author: Jason Cava <180894223+jcava17@users.noreply.github.com> | Committer: Jason Cava <180894223+jcava17@users.noreply.github.com> | Date: 2025-11-03T11:36:43-05:00 | force redeploy
     dc37444 | Author: GitHub Actions <actions@github.com> | Committer: GitHub Actions <actions@github.com> | Date: 2025-11-03T16:10:23Z | Auto-update branch-info.txt
     c588cda | Author: Jason Cava <180894223+jcava17@users.noreply.github.com> | Committer: Jason Cava <180894223+jcava17@users.noreply.github.com> | Date: 2025-11-03T11:10:05-05:00 | chore: trigger vercel redeploy
-    ef80cf0 | Author: GitHub Actions <actions@github.com> | Committer: GitHub Actions <actions@github.com> | Date: 2025-11-03T15:14:18Z | Auto-update branch-info.txt
-    bf2e5bd | Author: Jason Cava <180894223+jcava17@users.noreply.github.com> | Committer: Jason Cava <180894223+jcava17@users.noreply.github.com> | Date: 2025-11-03T10:13:51-05:00 | fix: replace page.tsx with build-friendly version
